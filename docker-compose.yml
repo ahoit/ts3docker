@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ehskts3:
+    image: teamspeak
+    ports:
+    - "9987:9987/udp"
+    - "10011:10011"
+    - "30033:30033"
+    volumes:
+    - ./:/var/ts3server/
+    environment:
+    - TS3SERVER_LICENSE=accept
+    - TS3SERVER_LICENSEPATH=/var/ts3server/
+    - TS3SERVER_LOG_QUERY_COMMANDS=1
+    restart: always
